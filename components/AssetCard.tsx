@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink, GitBranch, ShieldCheck, Sparkles, TrendingUp, X } from "lucide-react";
 import { useState } from "react";
 
@@ -92,7 +93,7 @@ export function AssetCard({ title, tag, text, button, kind, href }: AssetCardPro
             >
               <X aria-hidden="true" size={18} />
             </button>
-            <p className="section-kicker">{tag} snapshot</p>
+            <p className="section-kicker">{kind === "aria" ? "Slack governance demo" : `${tag} snapshot`}</p>
             <h3 className="mt-2 pr-12 font-display text-4xl font-semibold text-ink">{title}</h3>
             {kind === "maturity" ? <MaturityVisual /> : <AriaFlow />}
           </div>
@@ -103,36 +104,21 @@ export function AssetCard({ title, tag, text, button, kind, href }: AssetCardPro
 }
 
 function MaturityVisual() {
-  const departments = [
-    ["Marketing", 74, 68],
-    ["Sales / Client Relations", 67, 72],
-    ["Data / Analytics", 82, 63],
-    ["Physician / Provider Services", 46, 18],
-    ["Finance", 59, 42],
-    ["IT / Engineering", 84, 78]
-  ];
-
   return (
     <div className="mt-7">
-      <div className="relative h-[360px] border border-line bg-paper/80 p-5">
-        <div className="absolute bottom-7 left-10 right-5 border-t border-line" />
-        <div className="absolute bottom-7 left-10 top-5 border-l border-line" />
-        <span className="absolute bottom-2 left-10 text-xs font-bold uppercase tracking-wider text-mutedInk">Foundation</span>
-        <span className="absolute left-2 top-5 origin-left -rotate-90 text-xs font-bold uppercase tracking-wider text-mutedInk">Adoption</span>
-        {departments.map(([name, x, y]) => (
-          <div
-            key={name as string}
-            className="absolute -translate-x-1/2 -translate-y-1/2 border border-clay/30 bg-card px-3 py-2 text-xs font-bold text-ink shadow-soft"
-            style={{ left: `${x}%`, bottom: `${Number(y) * 0.82 + 8}%` }}
-          >
-            {name}
-          </div>
-        ))}
+      <div className="relative aspect-[1434/818] overflow-hidden border border-line bg-ink shadow-lift">
+        <Image
+          src="/assets/ai-maturity-map.png"
+          alt="PracticeLink AI Maturity Map showing foundation level versus adoption level by department"
+          fill
+          sizes="(min-width: 768px) 768px, 92vw"
+          className="object-contain"
+        />
       </div>
       <p className="mt-5 text-base leading-7 text-mutedInk">
-        The map separates AI foundation readiness from actual adoption. Departments with high appetite
-        and low usage become training priorities; departments with high adoption and weak governance
-        become policy and risk priorities.
+        The map separates foundation level from adoption level across departments. It makes clear where
+        PracticeLink should prioritize training, governance support, and workflow readiness before scaling
+        higher-risk AI usage.
       </p>
     </div>
   );
@@ -140,14 +126,20 @@ function MaturityVisual() {
 
 function AriaFlow() {
   const steps = [
-    ["Employee asks ARIA", "Tool, prompt, or content request starts in Slack."],
-    ["Registry check", "ARIA compares the request against approved tools and sensitivity rules."],
-    ["Classification", "Content is labeled by risk before it enters an AI workflow."],
-    ["Decision", "Approved, experimental, blocked, or escalated to governance owner."]
+    ["Employee asks ARIA in Slack", "The user starts with a tool question, content classification request, or approved-tool lookup."],
+    ["ARIA checks governance rules", "The assistant compares the request against tool registries, data sensitivity rules, and escalation criteria."],
+    ["ARIA returns a safe next step", "Employees receive an approved, experimental, blocked, or escalation recommendation inside the workflow."],
+    ["AI Champion review", "Higher-risk requests can be routed to a governance owner or AI Champion before sensitive data is processed."]
   ];
 
   return (
-    <div className="mt-7 grid gap-4">
+    <div className="mt-7 grid gap-5">
+      <p className="border-l-2 border-clay bg-paper/70 p-4 text-base leading-7 text-mutedInk">
+        ARIA is a Slack-based governance assistant designed to make AI policy usable in the moment
+        employees need it. Instead of asking staff to search through policy documents, ARIA answers
+        practical questions like whether a tool is approved, whether content is safe to send to AI,
+        and when an employee should escalate to an AI Champion or governance owner.
+      </p>
       {steps.map(([title, text], index) => (
         <div key={title} className="grid gap-4 border border-line bg-card/70 p-4 sm:grid-cols-[56px_1fr]">
           <div className="grid h-12 w-12 place-items-center border border-clay/30 bg-peach/15 font-display text-2xl font-semibold text-clay">
@@ -159,6 +151,9 @@ function AriaFlow() {
           </div>
         </div>
       ))}
+      <div className="border border-dashed border-clay/40 bg-peach/10 p-4 text-sm font-semibold leading-6 text-clay">
+        GitHub repository and Streamlit demo links will be added here once the final URLs are confirmed.
+      </div>
     </div>
   );
 }

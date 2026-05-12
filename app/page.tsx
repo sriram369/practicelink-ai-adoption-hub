@@ -25,13 +25,6 @@ const wants = [
   }
 ];
 
-const steps = [
-  ["Diagnose", "AI Maturity Map identifies gaps."],
-  ["Govern", "ARIA puts policy inside the workflow."],
-  ["Train", "Learning paths teach employees safe, useful AI workflows."],
-  ["Measure", "ROI model connects adoption to business value."]
-];
-
 export default function Home() {
   return (
     <>
@@ -75,7 +68,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="assets" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+        <section id="assets" className="mx-auto max-w-7xl scroll-mt-32 px-5 py-16 sm:px-8">
           <p className="section-kicker">Demo gallery</p>
           <h2 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
             Project Assets
@@ -91,7 +84,7 @@ export default function Home() {
             <AssetCard
               title="ARIA Governance Assistant"
               tag="Demo"
-              text="Slack-based governance assistant that evaluates tools, checks approved registries, and classifies content before employees send it to AI."
+              text="Slack-based governance assistant that helps employees check approved tools, classify content risk, and escalate sensitive AI use before data leaves the workflow."
               button="View ARIA Flow"
               kind="aria"
             />
@@ -113,23 +106,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-          <p className="section-kicker">Operating model</p>
-          <h2 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-            Why These Demos Matter
-          </h2>
-          <div className="mt-9 grid gap-4 lg:grid-cols-4">
-            {steps.map(([title, text], index) => (
-              <article key={title} className="relative border border-line bg-card/70 p-5 shadow-soft">
-                <span className="text-sm font-black text-clay">0{index + 1}</span>
-                <h3 className="mt-4 font-display text-3xl font-semibold text-ink">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-mutedInk">{text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="team" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+        <section id="team" className="mx-auto max-w-7xl scroll-mt-32 px-5 py-16 sm:px-8">
           <p className="section-kicker">Team</p>
           <h2 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
             Team Contributions
