@@ -32,42 +32,6 @@ export default function Home() {
       <main>
         <Hero />
 
-        <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-          <p className="section-kicker">Client need</p>
-          <div className="mt-3 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <h2 className="max-w-3xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-              What PracticeLink Wanted
-            </h2>
-            <p className="max-w-xl text-base leading-7 text-mutedInk">
-              A practical adoption system that makes AI useful, governed, and measurable across real departments.
-            </p>
-          </div>
-          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {wants.map((item) => (
-              <article key={item.title} className="border border-line bg-card/70 p-5 shadow-soft">
-                <h3 className="font-display text-2xl font-semibold text-ink">{item.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-mutedInk">{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
-          <div className="paper-panel overflow-hidden">
-            <div className="grid divide-y divide-line md:grid-cols-3 md:divide-x md:divide-y-0">
-              <FindingCard value="90%" label="of staff already use ChatGPT" />
-              <FindingCard value="71%" label="are unaware of AI governance policy" />
-              <FindingCard
-                value="High"
-                label="learning appetite in Physician / Provider Services, with no current AI usage"
-              />
-            </div>
-            <div className="border-t border-line bg-ink px-6 py-5 text-center font-display text-2xl font-semibold text-card">
-              PracticeLink does not have an AI adoption problem; it has an AI alignment problem.
-            </div>
-          </div>
-        </section>
-
         <section id="assets" className="mx-auto max-w-7xl scroll-mt-32 px-5 py-16 sm:px-8">
           <p className="section-kicker">Demo gallery</p>
           <h2 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
@@ -104,6 +68,42 @@ export default function Home() {
               button="Build Learning Path"
               kind="learning"
             />
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+          <p className="section-kicker">Client need</p>
+          <div className="mt-3 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <h2 className="max-w-3xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+              What PracticeLink Wanted
+            </h2>
+            <p className="max-w-xl text-base leading-7 text-mutedInk">
+              A practical adoption system that makes AI useful, governed, and measurable across real departments.
+            </p>
+          </div>
+          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {wants.map((item) => (
+              <article key={item.title} className="border border-line bg-card/70 p-5 shadow-soft">
+                <h3 className="font-display text-2xl font-semibold text-ink">{item.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-mutedInk">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
+          <div className="paper-panel overflow-hidden">
+            <div className="grid divide-y divide-line md:grid-cols-3 md:divide-x md:divide-y-0">
+              <FindingCard value="90%" label="of staff already use ChatGPT" />
+              <FindingCard value="71%" label="are unaware of AI governance policy" />
+              <FindingCard
+                value="High"
+                label="learning appetite in Physician / Provider Services, with no current AI usage"
+              />
+            </div>
+            <div className="border-t border-line bg-ink px-6 py-5 text-center font-display text-2xl font-semibold text-card">
+              PracticeLink does not have an AI adoption problem; it has an AI alignment problem.
+            </div>
           </div>
         </section>
 

@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   return (
@@ -20,16 +19,9 @@ export function Hero() {
             training, and measurable ROI.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/learning-path"
-              className="focus-ring inline-flex items-center justify-center gap-2 rounded-sm bg-ink px-5 py-3 text-sm font-bold text-card shadow-lift transition hover:-translate-y-0.5"
-            >
-              Explore Learning Path Builder
-              <ArrowRight aria-hidden="true" size={17} />
-            </Link>
             <a
               href="#assets"
-              className="focus-ring inline-flex items-center justify-center gap-2 rounded-sm border border-line bg-card/75 px-5 py-3 text-sm font-bold text-ink transition hover:border-clay/50 hover:text-clay"
+              className="focus-ring inline-flex items-center justify-center gap-2 rounded-sm bg-ink px-5 py-3 text-sm font-bold text-card shadow-lift transition hover:-translate-y-0.5"
             >
               View Project Assets
               <ArrowDown aria-hidden="true" size={17} />
