@@ -1,3 +1,4 @@
+import { AdoptionSystem } from "@/components/AdoptionSystem";
 import { AssetCard } from "@/components/AssetCard";
 import { FindingCard } from "@/components/FindingCard";
 import { Footer } from "@/components/Footer";
@@ -70,6 +71,8 @@ export default function Home() {
             />
           </div>
         </section>
+
+        <AdoptionSystem />
 
         <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
           <p className="section-kicker">Client need</p>
