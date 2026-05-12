@@ -1,12 +1,20 @@
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 pb-14 pt-16 sm:px-8 lg:pb-20 lg:pt-24">
         <div className="max-w-4xl">
-          <div className="mb-6 inline-flex border border-line bg-card/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-clay shadow-soft">
-            IT Consulting · Johns Hopkins Carey Business School
+          <div className="mb-7 inline-flex bg-white/75 px-4 py-3 shadow-soft ring-1 ring-line">
+            <Image
+              src="/assets/jhu-carey-logo.gif"
+              alt="Johns Hopkins Carey Business School"
+              width={173}
+              height={154}
+              className="h-16 w-auto object-contain sm:h-[76px]"
+              priority
+            />
           </div>
           <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[0.96] tracking-normal text-ink sm:text-6xl lg:text-7xl">
             PracticeLink AI Adoption Hub
