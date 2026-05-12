@@ -8,11 +8,11 @@ export function Hero() {
         <div className="max-w-4xl">
           <div className="mb-7 inline-flex bg-white/75 px-4 py-3 shadow-soft ring-1 ring-line">
             <Image
-              src="/assets/jhu-carey-logo.gif"
+              src="/assets/jhu-carey-horizontal.svg"
               alt="Johns Hopkins Carey Business School"
-              width={173}
-              height={154}
-              className="h-16 w-auto object-contain sm:h-[76px]"
+              width={490}
+              height={150}
+              className="h-14 w-auto object-contain sm:h-16"
               priority
             />
           </div>

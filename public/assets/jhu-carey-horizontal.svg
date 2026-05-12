@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300" role="img" aria-labelledby="title desc">
+  <title id="title">Johns Hopkins Carey Business School</title>
+  <desc id="desc">Horizontal Johns Hopkins Carey Business School logo mark.</desc>
+  <rect width="980" height="300" fill="none"/>
+  <g fill="#002D72">
+    <path d="M122 64h118v66c0 78-43 118-59 127-16-9-59-49-59-127V64Z"/>
+    <path fill="#F8F4EE" d="M132 75h98v53c0 64-33 99-49 109-16-10-49-45-49-109V75Z"/>
+    <path d="M141 84h80v30c-14-6-27-8-40-8s-26 2-40 8V84Z"/>
+    <path fill="#F8F4EE" d="M151 94h60v8c-10-3-20-4-30-4s-20 1-30 4V94Z"/>
+    <path d="M141 124h80v12h-80zM141 144h80v10h-80zM141 164h80v10h-80z"/>
+    <circle cx="159" cy="150" r="19"/>
+    <circle cx="159" cy="150" r="13" fill="#F8F4EE"/>
+    <path d="M146 149h26v3h-26zM158 137h3v26h-3z" fill="#002D72"/>
+    <path d="M151 140c5 6 5 15 0 21M167 140c-5 6-5 15 0 21" fill="none" stroke="#002D72" stroke-width="3"/>
+    <path d="M184 138h31v82c-8 8-18 15-31 23V138ZM143 182h28v40c-10-11-20-25-28-40Z"/>
+    <path fill="#F8F4EE" d="M191 150h17v72l-17 13V150ZM149 189h14v20c-5-6-10-13-14-20Z"/>
+  </g>
+  <g fill="#002D72">
+    <text x="282" y="128" font-family="Georgia, 'Times New Roman', serif" font-size="69" letter-spacing="-1">JOHNS HOPKINS</text>
+    <text x="286" y="181" font-family="Georgia, 'Times New Roman', serif" font-size="34" letter-spacing="1.2">CAREY BUSINESS SCHOOL</text>
+  </g>
+</svg>
