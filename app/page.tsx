@@ -87,6 +87,7 @@ export default function Home() {
               text="Slack-based governance assistant that helps employees check approved tools, classify content risk, and escalate sensitive AI use before data leaves the workflow."
               button="View ARIA Flow"
               kind="aria"
+              githubHref="https://github.com/fahda2/artificial-routing-intelligence-agent"
             />
             <AssetCard
               title="ROI Model"

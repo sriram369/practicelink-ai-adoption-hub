@@ -12,6 +12,7 @@ type AssetCardProps = {
   button: string;
   kind: "maturity" | "aria" | "roi" | "learning";
   href?: string;
+  githubHref?: string;
 };
 
 const icons = {
@@ -21,7 +22,7 @@ const icons = {
   learning: Sparkles
 };
 
-export function AssetCard({ title, tag, text, button, kind, href }: AssetCardProps) {
+export function AssetCard({ title, tag, text, button, kind, href, githubHref }: AssetCardProps) {
   const [open, setOpen] = useState(false);
   const Icon = icons[kind];
 
@@ -79,7 +80,20 @@ export function AssetCard({ title, tag, text, button, kind, href }: AssetCardPro
           ) : null}
         </div>
 
-        <div className="mt-7">{action}</div>
+        <div className="mt-7 flex flex-wrap gap-3">
+          {action}
+          {kind === "aria" && githubHref ? (
+            <a
+              className="focus-ring inline-flex items-center gap-2 rounded-sm border border-line bg-card px-4 py-2 text-sm font-bold text-ink transition hover:border-clay/50 hover:text-clay"
+              href={githubHref}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View GitHub Repo
+              <ExternalLink aria-hidden="true" size={16} />
+            </a>
+          ) : null}
+        </div>
       </article>
 
       {open ? (
@@ -95,7 +109,7 @@ export function AssetCard({ title, tag, text, button, kind, href }: AssetCardPro
             </button>
             <p className="section-kicker">{kind === "aria" ? "Slack governance demo" : `${tag} snapshot`}</p>
             <h3 className="mt-2 pr-12 font-display text-4xl font-semibold text-ink">{title}</h3>
-            {kind === "maturity" ? <MaturityVisual /> : <AriaFlow />}
+            {kind === "maturity" ? <MaturityVisual /> : <AriaFlow githubHref={githubHref} />}
           </div>
         </div>
       ) : null}
@@ -124,7 +138,7 @@ function MaturityVisual() {
   );
 }
 
-function AriaFlow() {
+function AriaFlow({ githubHref }: { githubHref?: string }) {
   const steps = [
     ["Employee asks ARIA in Slack", "The user starts with a tool question, content classification request, or approved-tool lookup."],
     ["ARIA checks governance rules", "The assistant compares the request against tool registries, data sensitivity rules, and escalation criteria."],
@@ -151,8 +165,21 @@ function AriaFlow() {
           </div>
         </div>
       ))}
-      <div className="border border-dashed border-clay/40 bg-peach/10 p-4 text-sm font-semibold leading-6 text-clay">
-        GitHub repository and Streamlit demo links will be added here once the final URLs are confirmed.
+      <div className="flex flex-wrap gap-3 border border-dashed border-clay/40 bg-peach/10 p-4">
+        {githubHref ? (
+          <a
+            className="focus-ring inline-flex items-center gap-2 rounded-sm bg-ink px-4 py-2 text-sm font-bold text-card transition hover:-translate-y-0.5"
+            href={githubHref}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open Fahda&apos;s GitHub Repo
+            <ExternalLink aria-hidden="true" size={16} />
+          </a>
+        ) : null}
+        <span className="self-center text-sm font-semibold leading-6 text-clay">
+          Streamlit demo link can be added here when it is available.
+        </span>
       </div>
     </div>
   );
